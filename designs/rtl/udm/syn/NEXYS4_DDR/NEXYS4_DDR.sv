@@ -135,6 +135,18 @@ assign udm_bus.ack = udm_bus.req;   // bus always ready to accept request
 logic csr_resp, testmem_resp, testmem_resp_dly;
 logic [31:0] csr_rdata;
 
+// CSR instantiation
+logic [31:0] csr_elem_in [15:0];
+logic [31:0] csr_max_elem_out;
+logic [3:0] csr_max_index_out;
+// module instantiation
+FindMaxVal_comb FindMaxVal_inst (
+ .elem_bi(csr_elem_in)
+ , .max_elem_bo(csr_max_elem_out)
+ , .max_index_bo(csr_max_index_out)
+);
+
+
 // bus request
 always @(posedge clk_gen)
     begin
@@ -149,12 +161,22 @@ always @(posedge clk_gen)
     
     if (srst) LED <= 16'hffff;
     
+     if (srst) // asserting default values to input CSRs on reset
+        begin
+        for (int i=0; i<16; i++)
+        begin
+        csr_elem_in[i] <= 0;
+        end
+        end
+    
     if (udm_bus.req && udm_bus.ack)
         begin
         
         if (udm_bus.we)     // writing
             begin
             if (udm_bus.addr == CSR_LED_ADDR) LED <= udm_bus.wdata;
+            if (udm_bus.addr[31:28] == 4'h1) csr_elem_in[udm_bus.addr[5:2]] <= udm_bus.wdata;
+
             if (testmem_udm_enb)
                 begin
                 testmem_udm_we <= 1'b1;
@@ -174,6 +196,16 @@ always @(posedge clk_gen)
                 begin
                 csr_resp <= 1'b1;
                 csr_rdata <= SW;
+                end
+            if (udm_bus.addr == 32'h20000000)
+                begin
+                csr_resp <= 1'b1;
+                csr_rdata <= csr_max_elem_out;
+                end
+            if (udm_bus.addr == 32'h20000004)
+                begin
+                csr_resp <= 1'b1;
+                csr_rdata <= csr_max_index_out;
                 end
             if (testmem_udm_enb)
                 begin

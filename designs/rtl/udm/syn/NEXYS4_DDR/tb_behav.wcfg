@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="31880000001fs"></ZoomEndTime>
-      <Cursor1Time time="16000000000fs"></Cursor1Time>
+      <ZoomEndTime time="7644693878fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="437"></NameColumnWidth>
-      <ValueColumnWidth column_width="268"></ValueColumnWidth>
+      <ValueColumnWidth column_width="264"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="/tb/SW" type="array">
       <obj_property name="ElementShortName">SW[15:0]</obj_property>
       <obj_property name="ObjectShortName">SW[15:0]</obj_property>
@@ -78,5 +78,17 @@
    <wvobject fp_name="/tb/DUT/testmem/ram" type="array">
       <obj_property name="ElementShortName">ram[0:1023][31:0]</obj_property>
       <obj_property name="ObjectShortName">ram[0:1023][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/elem_bi" type="array">
+      <obj_property name="ElementShortName">elem_bi[15:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">elem_bi[15:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/max_elem_bo" type="array">
+      <obj_property name="ElementShortName">max_elem_bo[31:0]</obj_property>
+      <obj_property name="ObjectShortName">max_elem_bo[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/max_index_bo" type="array">
+      <obj_property name="ElementShortName">max_index_bo[3:0]</obj_property>
+      <obj_property name="ObjectShortName">max_index_bo[3:0]</obj_property>
    </wvobject>
 </wave_config>

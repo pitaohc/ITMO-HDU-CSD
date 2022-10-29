@@ -89,41 +89,38 @@ initial
 	
 	SW = 8'h30;
 	RESET_ALL();
-	WAIT(100);
-
+	//WAIT(100);
+    //$display ("### 111111 ###");
 	udm.cfg(`DIVIDER_115200, 2'b00);
 	udm.check();
 	udm.hreset();
-	WAIT(100);
+	//WAIT(100);
 	
-	// memory initialization
-	udm.wr32(32'h80000000, 32'h112233cc);
-	udm.wr32(32'h80000004, 32'h55aa55aa);
-	udm.wr32(32'h80000008, 32'h01010202);
-	udm.wr32(32'h8000000C, 32'h44556677);
-	udm.wr32(32'h80000010, 32'h00000003);
-	udm.wr32(32'h80000014, 32'h00000004);
-	udm.wr32(32'h80000018, 32'h00000005);
-	udm.wr32(32'h8000001C, 32'h00000006);
-	udm.wr32(32'h80000020, 32'h00000007);
-	udm.wr32(32'h80000024, 32'hdeadbeef);
-	udm.wr32(32'h80000028, 32'hfefe8800);
-	udm.wr32(32'h8000002C, 32'h23344556);
-	udm.wr32(32'h80000030, 32'h05050505);
-	udm.wr32(32'h80000034, 32'h07070707);
-	udm.wr32(32'h80000038, 32'h99999999);
-	udm.wr32(32'h8000003C, 32'hbadc0ffe);
-	
-	WAIT(100);
-	
+    //$display ("### 222222 ###");
+    // test data initialization
+    udm.wr32(32'h10000000, 32'h112233cc);
+    udm.wr32(32'h10000004, 32'h55aa55aa);
+    udm.wr32(32'h10000008, 32'h01010202);
+    udm.wr32(32'h1000000C, 32'h44556677);
+    udm.wr32(32'h10000010, 32'h00000003);
+    udm.wr32(32'h10000014, 32'h00000004);
+    udm.wr32(32'h10000018, 32'h00000005);
+    udm.wr32(32'h1000001C, 32'h00000006);
+    udm.wr32(32'h10000020, 32'h00000007);
+    udm.wr32(32'h10000024, 32'hdeadbeef);
+    udm.wr32(32'h10000028, 32'hfefe8800);
+    udm.wr32(32'h1000002C, 32'h23344556);
+    udm.wr32(32'h10000030, 32'h05050505);
+    udm.wr32(32'h10000034, 32'h07070707);
+    udm.wr32(32'h10000038, 32'h99999999);
+    udm.wr32(32'h1000003C, 32'hbadc0ffe);
+    // fetching results
+    udm.rd32(32'h20000000);
+    udm.rd32(32'h20000004);
 	// writing to LED
-	udm.wr32(32'h00000000, 32'h5a5a5a5a);
-	
-	// reading SW
-	udm.rd32(32'h00000004);
-	
-	WAIT(1000);
-
+	//udm.wr32(32'h00000000, 32'h5a5a5a5a);
+	//WAIT(1000);
+    //excepted answer  0xfefe8800 at index 10 (0xa).
 	$display ("### TEST PROCEDURE FINISHED ###");
 	$stop;
     end
