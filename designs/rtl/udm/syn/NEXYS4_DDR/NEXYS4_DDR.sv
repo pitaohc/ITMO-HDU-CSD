@@ -136,14 +136,12 @@ logic csr_resp, testmem_resp, testmem_resp_dly;
 logic [31:0] csr_rdata;
 
 // CSR instantiation
-logic [31:0] csr_elem_in [15:0];
-logic [31:0] csr_max_elem_out;
-logic [3:0] csr_max_index_out;
+logic [31:0] csr_elem_in;
+logic [31:0] csr_number_out;
 // module instantiation
-FindMaxVal_comb FindMaxVal_inst (
- .elem_bi(csr_elem_in)
- , .max_elem_bo(csr_max_elem_out)
- , .max_index_bo(csr_max_index_out)
+Cubic_comb Cubic_inst (
+ .input_number(csr_elem_in)
+ , .output_number(csr_number_out)
 );
 
 
@@ -175,7 +173,8 @@ always @(posedge clk_gen)
         if (udm_bus.we)     // writing
             begin
             if (udm_bus.addr == CSR_LED_ADDR) LED <= udm_bus.wdata;
-            if (udm_bus.addr[31:28] == 4'h1) csr_elem_in[udm_bus.addr[5:2]] <= udm_bus.wdata;
+            if (udm_bus.addr == 32'h10000000) csr_elem_in <= udm_bus.wdata;
+//            if (udm_bus.addr[31:28] == 4'h1) csr_elem_in[udm_bus.addr[5:2]] <= udm_bus.wdata;
 
             if (testmem_udm_enb)
                 begin
@@ -200,12 +199,7 @@ always @(posedge clk_gen)
             if (udm_bus.addr == 32'h20000000)
                 begin
                 csr_resp <= 1'b1;
-                csr_rdata <= csr_max_elem_out;
-                end
-            if (udm_bus.addr == 32'h20000004)
-                begin
-                csr_resp <= 1'b1;
-                csr_rdata <= csr_max_index_out;
+                csr_rdata <= csr_number_out;
                 end
             if (testmem_udm_enb)
                 begin
