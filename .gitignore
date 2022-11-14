@@ -1,2 +1,7 @@
 .idea
 *.log
+/designs/rtl/udm/syn/NEXYS4_DDR/NEXYS4_DDR.runs/
+/designs/rtl/udm/syn/NEXYS4_DDR/NEXYS4_DDR.sim/
+/designs/rtl/udm/syn/NEXYS4_DDR/NEXYS4_DDR.cache/
+/designs/rtl/udm/syn/NEXYS4_DDR/NEXYS4_DDR.hw/
+/designs/rtl/udm/syn/NEXYS4_DDR/NEXYS4_DDR.ip_user_files/
