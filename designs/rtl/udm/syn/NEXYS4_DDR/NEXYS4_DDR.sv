@@ -140,12 +140,18 @@ logic [31:0] csr_elem_in [15:0];
 logic [31:0] csr_max_elem_out;
 logic [3:0] csr_max_index_out;
 // module instantiation
-FindMaxVal_comb FindMaxVal_inst (
- .elem_bi(csr_elem_in)
- , .max_elem_bo(csr_max_elem_out)
- , .max_index_bo(csr_max_index_out)
+// FindMaxVal_comb FindMaxVal_inst (
+//  .elem_bi(csr_elem_in)
+//  , .max_elem_bo(csr_max_elem_out)
+//  , .max_index_bo(csr_max_index_out)
+// );
+FindMaxVal_pipelined FindMaxVal_inst(
+    .clk_i(clk_gen),
+    .rst_i(srst),
+    .elem_bi(csr_elem_in),
+    .max_elem_bo(csr_max_elem_out),
+    .max_index_bo(csr_max_index_out)
 );
-
 
 // bus request
 always @(posedge clk_gen)
