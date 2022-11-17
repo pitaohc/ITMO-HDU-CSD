@@ -139,11 +139,17 @@ logic [31:0] csr_rdata;
 logic [31:0] csr_elem_in;
 logic [31:0] csr_number_out;
 // module instantiation
-Cubic_comb Cubic_inst (
- .input_number(csr_elem_in)
- , .output_number(csr_number_out)
+Cubic_pipeline Cubic_inst (
+    .clk_i(clk_gen),
+    .rst_i(srst),
+    .input_number(csr_elem_in),
+    .output_number(csr_number_out)
 );
 
+//Cubic_comb Cubic_inst (
+//    .input_number(csr_elem_in),
+//    .output_number(csr_number_out)
+//);
 
 // bus request
 always @(posedge clk_gen)

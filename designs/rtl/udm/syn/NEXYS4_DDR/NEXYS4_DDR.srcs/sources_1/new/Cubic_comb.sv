@@ -32,11 +32,11 @@ always @*  begin
     y = 32'h0;
     b = 32'h0;
     for (integer s = 32'd30; s>=0; s-=3) begin
-        y = 2 * y;
+        y <<= 1;
         b = (3 * y * (y + 1) + 1) << s;
         if(x>=b)begin
             x -=  b;
-            y++;
+            ++y;
         end
     end
     output_number = y;
