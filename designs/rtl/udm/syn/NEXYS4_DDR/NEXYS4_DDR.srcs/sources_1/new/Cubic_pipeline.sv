@@ -1,11 +1,156 @@
+// `timescale 1ns / 1ps
+// //////////////////////////////////////////////////////////////////////////////////
+// // Company: 
+// // Engineer: 
+// // 
+// // Create Date: 2020/04/23 16:09:05
+// // Design Name: 
+// // Module Name: Cubic_Root_pipelined
+// // Project Name: 
+// // Target Devices: 
+// // Tool Versions: 
+// // Description: 
+// // 
+// // Dependencies: 
+// // 
+// // Revision:
+// // Revision 0.01 - File Created
+// // Additional Comments:
+// // 
+// //////////////////////////////////////////////////////////////////////////////////
+
+
+// module Cubic_pipeline(
+//     input clk_i
+//     , input rst_i
+//     , input [31:0] elem_x
+//     , output logic [31:0] elem_y
+//     );
+// // stage 0
+// logic [31:0] b;
+// logic [31:0] elem_x_copy_0;
+// logic [31:0] elem_y_0;
+// always @(posedge clk_i)
+//     begin
+//     elem_x_copy_0 <= elem_x;
+//     elem_y_0 <= 0;
+//     for(integer s=30;s>=27;s=s-3)
+//         begin
+//         elem_y_0 = 2*elem_y_0;
+//         b = (3*elem_y_0*(elem_y_0 + 1) + 1) << s;
+//         if(elem_x_copy_0 >= b)
+//             begin
+//             elem_x_copy_0 = elem_x_copy_0 - b;
+//             elem_y_0 = elem_y_0 + 1;
+//             end
+//         end
+//     end
+
+// // stage 1
+// logic [31:0] elem_x_copy_1;
+// logic [31:0] elem_y_1;
+// always @(posedge clk_i)
+//     begin
+//         elem_x_copy_1 <=elem_x_copy_0;
+//         elem_y_1 <= elem_y_0;
+//     for(integer s=24;s>=21;s=s-3)
+//         begin
+//         elem_y_1 = 2*elem_y_1;
+//         b = (3*elem_y_1*(elem_y_1 + 1) + 1) << s;
+//         if(elem_x_copy_1 >= b)
+//             begin
+//             elem_x_copy_1 = elem_x_copy_1 - b;
+//             elem_y_1 = elem_y_1 + 1;
+//             end
+//         end
+//     end
+
+// // stage 2
+// logic [31:0] elem_x_copy_2;
+// logic [31:0] elem_y_2;
+// always @(posedge clk_i)
+//     begin
+//         elem_x_copy_2 <=elem_x_copy_1;
+//         elem_y_2 <= elem_y_1;
+//     for(integer s=18;s>=15;s=s-3)
+//         begin
+//         elem_y_2 = 2*elem_y_2;
+//         b = (3*elem_y_2*(elem_y_2 + 1) + 1) << s;
+//         if(elem_x_copy_2 >= b)
+//             begin
+//             elem_x_copy_2 = elem_x_copy_2 - b;
+//             elem_y_2 = elem_y_2 + 1;
+//             end
+//         end
+//     end
+// // stage 3
+// logic [31:0] elem_x_copy_3;
+// logic [31:0] elem_y_3;
+// always @(posedge clk_i)
+//     begin
+//         elem_x_copy_3 <=elem_x_copy_2;
+//         elem_y_3 <= elem_y_2;
+//     for(integer s=12;s>=9;s=s-3)
+//         begin
+//         elem_y_3 = 2*elem_y_3;
+//         b = (3*elem_y_3*(elem_y_3 + 1) + 1) << s;
+//         if(elem_x_copy_3 >= b)
+//             begin
+//             elem_x_copy_3 = elem_x_copy_3 - b;
+//             elem_y_3 = elem_y_3 + 1;
+//             end
+//         end
+//     end
+
+//    // stage 4
+// logic [31:0] elem_x_copy_4;
+// logic [31:0] elem_y_4;
+// always @(posedge clk_i)
+//     begin
+//         elem_x_copy_4 <=elem_x_copy_3;
+//         elem_y_4 <= elem_y_3;
+//         for(integer s=6;s>=3;s=s-3) begin
+//         elem_y_4 = 2*elem_y_4;
+//         b = (3*elem_y_4*(elem_y_4 + 1) + 1) << s;
+//         if(elem_x_copy_4 >= b)
+//             begin
+//             elem_x_copy_4 = elem_x_copy_4 - b;
+//             elem_y_4 = elem_y_4 + 1;
+//             end
+//         end
+//     elem_y <= elem_y_4;
+//     end
+ 
+//     // stage 5
+// logic [31:0] elem_x_copy_5;
+// logic [31:0] elem_y_5;
+// always @(posedge clk_i)
+//     begin
+//         elem_x_copy_5 <=elem_x_copy_4;
+//         elem_y_5 <= elem_y_4;
+//         for(integer s=0;s>=0;s=s-3) begin
+//         elem_y_5 = 2*elem_y_5;
+//         b = (3*elem_y_5*(elem_y_5 + 1) + 1) << s;
+//         if(elem_x_copy_5 >= b)
+//             begin
+//             elem_x_copy_5 = elem_x_copy_5 - b;
+//             elem_y_5 = elem_y_5 + 1;
+//             end
+//         end
+//     elem_y <= elem_y_5;
+//     end
+
+// endmodule
+
+
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2022/11/16 20:57:05
+// Create Date: 2022/11/18 19:41:08
 // Design Name: 
-// Module Name: Cubic_pipeline
+// Module Name: Cubic_pipline
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -21,11 +166,11 @@
 
 
 module Cubic_pipeline(
-    input clk_i,
-    input rst_i,
-    input [31:0] input_number,
-    output logic [31:0] output_number
-    );
+   input clk_i,
+   input rst_i,
+   input [31:0] input_number,
+   output logic [31:0] output_number
+   );
 
 logic [31:0] x[10:0];
 logic [31:0] y[10:0];
@@ -33,139 +178,216 @@ logic [31:0] x_next[10:0];
 logic [31:0] y_next[10:0];
 logic [31:0] b[10:0];
 always @*  begin
-    x[0] = input_number;
-    y[0] = 32'h0;
-    b[0] = (3 * y[0] * (y[0] + 1) + 1) << 30;
-    if(x[0]>=b[0])begin
-        x[0] -= b[0];
-        ++y[0];
-    end
+   integer stage,b,s;
+   stage = 0;
+   s = 30 - 3 * stage;
+   x[stage] = input_number;
+   y[stage] = 32'h0;
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
 end
 
 always @*  begin
-    x[1] = x_next[0];
-    y[1] = y_next[0];
-    b[1] = (3 * y[1] * (y[1] + 1) + 1) << 27;
-    if(x[1]>=b[1])begin
-        x[1] -= b[1];
-        ++y[1];
-    end
+   integer stage,b,s;
+   stage = 1;
+   s = 30 - 3 * stage;
+   x[stage] = x_next[stage-1];
+   y[stage] = y_next[stage-1];
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
 end
 
 always @*  begin
-    x[2] = x_next[1];
-    y[2] = y_next[1];
-    b[2] = (3 * y[2] * (y[2] + 1) + 1) << 24;
-    if(x[2]>=b[2])begin
-        x[2] -= b[2];
-        ++y[2];
-    end
+   integer stage,b,s;
+   stage = 2;
+   s = 30 - 3 * stage;
+   x[stage] = x_next[stage-1];
+   y[stage] = y_next[stage-1];
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
 end
 
 always @*  begin
-    x[3] = x_next[2];
-    y[3] = y_next[2];
-    y[3] <<= 1;
-    b[3] = (3 * y[3] * (y[3] + 1) + 1) << 21;
-    if(x[3]>=b[3])begin
-        x[3] -= b[3];
-        ++y[3];
-    end
+   integer stage,b,s;
+   stage = 3;
+   s = 30 - 3 * stage;
+   x[stage] = x_next[stage-1];
+   y[stage] = y_next[stage-1];
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
 end
 
 always @*  begin
-    x[4] = x_next[3];
-    y[4] = y_next[3];
-    y[4] <<= 1;
-    b[4] = (3 * y[4] * (y[4] + 1) + 1) << 18;
-    if(x[4]>=b[4])begin
-        x[4] -= b[4];
-        ++y[4];
-    end
+   integer stage,b,s;
+   stage = 4;
+   s = 30 - 3 * stage;
+   x[stage] = x_next[stage-1];
+   y[stage] = y_next[stage-1];
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
 end
 
 always @*  begin
-    x[5] = x_next[4];
-    y[5] = y_next[4];
-    y[5] <<= 1;
-    b[5] = (3 * y[5] * (y[5] + 1) + 1) << 15;
-    if(x[5]>=b[5])begin
-        x[5] -= b[5];
-        ++y[5];
-    end
-
-    // y[5] <<= 1;
-    // b[5] = (3 * y[5] * (y[5] + 1) + 1) << 12;
-    // if(x[5]>=b[5])begin
-    //     x[5] -= b[5];
-    //     ++y[5];
-    // end
+   integer stage,b,s;
+   stage = 5;
+   s = 30 - 3 * stage;
+   x[stage] = x_next[stage-1];
+   y[stage] = y_next[stage-1];
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
 end
 
-// always @*  begin
-//     x[6] = x_next[5];
-//     y[6] = y_next[5];
-//     y[6] <<= 1;
-//     b[6] = (3 * y[6] * (y[6] + 1) + 1) << 12;
-//     if(x[6]>=b[6])begin
-//         x[6] -= b[6];
-//         ++y[6];
-//     end
-// end
-
-// always @*  begin
-//     x[7] = x_next[6];
-//     y[7] = y_next[6];
-//     y[7] <<= 1;
-//     b[7] = (3 * y[7] * (y[7] + 1) + 1) << 9;
-//     if(x[7]>=b[7])begin
-//         x[7] -= b[7];
-//         ++y[7];
-//     end
-// end
-
-// always @*  begin
-//     x[8] = x_next[7];
-//     y[8] = y_next[7];
-    
-//     for (integer s = 32'd6; s>=0; s-=3) begin
-//         y[8] <<= 1;
-//         b[8] = (3 * y[8] * (y[8] + 1) + 1) << s;
-//         if(x[8]>=b[8])begin
-//             x[8] -= b[8];
-//             ++y[8];
-//         end
-//     end
-// end
 always @*  begin
-    x[6] = x_next[5];
-    y[6] = y_next[5];
-    
-    for (integer s = 32'd12; s>=0; s-=3) begin
-        y[6] <<= 1;
-        b[6] = (3 * y[6] * (y[6] + 1) + 1) << s;
-        if(x[6]>=b[6])begin
-            x[6] -= b[6];
-            ++y[6];
-        end
-    end
+   integer stage,b,s;
+   stage = 6;
+   s = 30 - 3 * stage;
+   x[stage] = x_next[stage-1];
+   y[stage] = y_next[stage-1];
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
 end
 
-
-always @(posedge clk_i ) begin
-    if(rst_i) begin
-        output_number <= 0;
-        for (integer i=0; i<=10; i++) x_next[i] <= 0;
-        for (integer i=0; i<=10; i++) y_next[i] <= 0;
-
-    end
-    else begin
-        output_number <= y[6];
-        for (integer i=0; i<=10; i++) x_next[i] <= x[i];
-        for (integer i=0; i<=10; i++) y_next[i] <= y[i];
-        
-    end
+always @*  begin
+   integer stage,b,s;
+   stage = 7;
+   s = 30 - 3 * stage;
+   x[stage] = x_next[stage-1];
+   y[stage] = y_next[stage-1];
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
 end
 
+always @*  begin
+   integer stage,b,s;
+   stage = 8;
+   s = 30 - 3 * stage;
+   x[stage] = x_next[stage-1];
+   y[stage] = y_next[stage-1];
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
+end
 
+always @*  begin
+   integer stage,b,s;
+   stage = 9;
+   s = 30 - 3 * stage;
+   x[stage] = x_next[stage-1];
+   y[stage] = y_next[stage-1];
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
+end
+
+always @*  begin
+   integer stage,b,s;
+   stage = 10;
+   s = 30 - 3 * stage;
+   x[stage] = x_next[stage-1];
+   y[stage] = y_next[stage-1];
+   y[stage] <<= 1;
+   b = (3 * y[stage] * (y[stage] + 1) + 1) << s;
+   if(x[stage] >= b)begin
+       x[stage] = x[stage] - b;
+       y[stage] = y[stage] + 1;
+   end
+   else begin
+       x[stage] = x[stage];
+       y[stage] = y[stage];
+   end
+end
+
+// writing to registers
+always @(posedge clk_i)begin
+   if (rst_i) begin
+       for (integer i=0; i<11; i++) b[i] <= 0;
+       for (integer i=0; i<11; i++) x[i] <= 0;
+       for (integer i=0; i<11; i++) y[i] <= 0;
+       for (integer i=0; i<11; i++) x_next[i] <= 0;
+       for (integer i=0; i<11; i++) y_next[i] <= 0;
+   end
+   else begin
+       for (integer i=0; i<11; i++) x_next[i] <= x[i];
+       for (integer i=0; i<11; i++) y_next[i] <= y[i];
+       output_number <= y[10];
+   end
+end
 endmodule
