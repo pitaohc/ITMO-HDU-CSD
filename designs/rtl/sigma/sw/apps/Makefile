@@ -15,17 +15,18 @@ src_dir = .
 #--------------------------------------------------------------------
 
 bmarks = \
+	find_max \
 	heartbeat_variable \
-	md5 \
-	timer_test \
-	mul_sw \
-	irq_counter \
-	median \
-	qsort \
-	rsort \
-	crc32 \
-	bootloader \
-	dhrystone \
+	#md5 \
+	#timer_test \
+	#mul_sw \
+	#irq_counter \
+	#median \
+	#qsort \
+	#rsort \
+	#crc32 \
+	#bootloader \
+	#dhrystone \
 	#towers \
 	#vvadd \
 	#multiply \

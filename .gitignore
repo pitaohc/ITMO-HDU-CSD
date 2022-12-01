@@ -1,7 +1,11 @@
-.idea
+.idea/
+.vs/
 *.log
-/designs/rtl/udm/syn/NEXYS4_DDR/NEXYS4_DDR.runs/
-/designs/rtl/udm/syn/NEXYS4_DDR/NEXYS4_DDR.sim/
-/designs/rtl/udm/syn/NEXYS4_DDR/NEXYS4_DDR.cache/
-/designs/rtl/udm/syn/NEXYS4_DDR/NEXYS4_DDR.hw/
-/designs/rtl/udm/syn/NEXYS4_DDR/NEXYS4_DDR.ip_user_files/
+*.hex
+*.dump
+*.riscv
+**/NEXYS4_DDR.sim/
+**/NEXYS4_DDR.cache/
+**/NEXYS4_DDR.hw/
+**/NEXYS4_DDR.runs/
+**/NEXYS4_DDR.ip_user_files/
