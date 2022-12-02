@@ -44,7 +44,8 @@ sigma
 	, .delay_test_flag(0)
 	
 	, .mem_init_type("elf")
-	, .mem_init_data("../../sw/apps/heartbeat_variable.riscv")
+	, .mem_init_data("Z:/Computer Systems Design/activecore/designs/rtl/sigma/sw/apps/find_max.riscv")
+//	, .mem_init_data("../../sw/apps/heartbeat_variable.riscv")
 	, .mem_size(8192)
 ) sigma
 (
