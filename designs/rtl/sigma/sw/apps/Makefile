@@ -15,7 +15,7 @@ src_dir = .
 #--------------------------------------------------------------------
 
 bmarks = \
-	find_max \
+	cubic \
 	heartbeat_variable \
 	#md5 \
 	#timer_test \

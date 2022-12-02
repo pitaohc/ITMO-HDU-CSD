@@ -9,3 +9,4 @@
 **/NEXYS4_DDR.hw/
 **/NEXYS4_DDR.runs/
 **/NEXYS4_DDR.ip_user_files/
+build/
