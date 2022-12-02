@@ -32,19 +32,19 @@ reg irq_btn;
 	
 sigma
 #(
-	//.CPU("riscv_1stage")
-	//.CPU("riscv_2stage")
-	//.CPU("riscv_3stage")
-	//.CPU("riscv_4stage")
+//	.CPU("riscv_1stage")
+//	.CPU("riscv_2stage")
+//	.CPU("riscv_3stage")
+//	.CPU("riscv_4stage")
 	.CPU("riscv_5stage")
-	//.CPU("riscv_6stage")
+//	.CPU("riscv_6stage")
 
 	, .UDM_RTX_EXTERNAL_OVERRIDE("YES")
 	, .DEBOUNCER_FACTOR_POW(2)
 	, .delay_test_flag(0)
 	
 	, .mem_init_type("elf")
-	, .mem_init_data("Z:/Computer Systems Design/activecore/designs/rtl/sigma/sw/apps/find_max.riscv")
+	, .mem_init_data("Z:/Computer Systems Design/activecore/designs/rtl/sigma/sw/apps/cubic.riscv")
 //	, .mem_init_data("../../sw/apps/heartbeat_variable.riscv")
 	, .mem_size(8192)
 ) sigma

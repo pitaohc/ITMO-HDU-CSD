@@ -30,7 +30,7 @@ sigma
 	.CPU("riscv_4stage")
 	, .delay_test_flag(0)
 	, .mem_init_type("hex")
-	, .mem_init_data("../sigma/sw/apps/heartbeat_variable.riscv.hex")
+	, .mem_init_data("../sigma/sw/apps/cubic.riscv.hex")
 	, .mem_size(8192)
 ) sigma
 (

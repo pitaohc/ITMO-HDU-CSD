@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="riscv_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_arb_1m2s_sv " />
+            <top_module name="glbl" />
+            <top_module name="riscv_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="8365000001fs"></ZoomEndTime>
+      <Cursor1Time time="565000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="267"></NameColumnWidth>
+      <ValueColumnWidth column_width="175"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wave_markers>
+      <marker time="1985000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/riscv_tb/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/RST" type="logic">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/rx" type="logic">
+      <obj_property name="ElementShortName">rx</obj_property>
+      <obj_property name="ObjectShortName">rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/SW" type="array">
+      <obj_property name="ElementShortName">SW[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SW[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/LED" type="array">
+      <obj_property name="ElementShortName">LED[31:0]</obj_property>
+      <obj_property name="ObjectShortName">LED[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/irq_btn" type="logic">
+      <obj_property name="ElementShortName">irq_btn</obj_property>
+      <obj_property name="ObjectShortName">irq_btn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/parity" type="logic">
+      <obj_property name="ElementShortName">parity</obj_property>
+      <obj_property name="ObjectShortName">parity</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/j" type="array">
+      <obj_property name="ElementShortName">j[31:0]</obj_property>
+      <obj_property name="ObjectShortName">j[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/k" type="array">
+      <obj_property name="ElementShortName">k[31:0]</obj_property>
+      <obj_property name="ObjectShortName">k[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/rate" type="array">
+      <obj_property name="ElementShortName">rate[32:0]</obj_property>
+      <obj_property name="ObjectShortName">rate[32:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/configuration" type="array">
+      <obj_property name="ElementShortName">configuration[1:0]</obj_property>
+      <obj_property name="ObjectShortName">configuration[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/CPU_RAM_ADDR" type="array">
+      <obj_property name="ElementShortName">CPU_RAM_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CPU_RAM_ADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/CSR_LED_ADDR" type="array">
+      <obj_property name="ElementShortName">CSR_LED_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CSR_LED_ADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/riscv_tb/CSR_SW_ADDR" type="array">
+      <obj_property name="ElementShortName">CSR_SW_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CSR_SW_ADDR[31:0]</obj_property>
+   </wvobject>
+</wave_config>
