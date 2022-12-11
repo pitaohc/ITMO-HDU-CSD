@@ -4,8 +4,12 @@
 *.hex
 *.dump
 *.riscv
+*.lock
+*.jou
+*.str
 **/NEXYS4_DDR.sim/
 **/NEXYS4_DDR.cache/
 **/NEXYS4_DDR.hw/
 **/NEXYS4_DDR.runs/
 **/NEXYS4_DDR.ip_user_files/
+build/
