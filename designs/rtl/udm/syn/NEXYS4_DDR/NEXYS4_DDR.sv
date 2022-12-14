@@ -139,11 +139,20 @@ logic [31:0] csr_rdata;
 logic [31:0] csr_elem_in;
 logic [31:0] csr_number_out;
 // module instantiation
-Cubic_comb Cubic_inst (
- .input_number(csr_elem_in)
- , .output_number(csr_number_out)
+//Cubic_comb Cubic_inst (
+// .input_number(csr_elem_in)
+// , .output_number(csr_number_out)
+//);
+Cubic Cubic_inst (
+        .ap_clk(clk_gen),
+        .ap_rst(srst),
+        .ap_start(1'b1),
+        .ap_done(hls_module_done),
+        //.ap_idle(),
+        //.ap_ready(),
+        .x(csr_elem_in),
+        .ap_return(csr_number_out)
 );
-
 
 // bus request
 always @(posedge clk_gen)
