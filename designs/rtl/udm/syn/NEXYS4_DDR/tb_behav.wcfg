@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="7644693878fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomStartTime time="601075604fs"></ZoomStartTime>
+      <ZoomEndTime time="6773784880fs"></ZoomEndTime>
+      <Cursor1Time time="5745000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="437"></NameColumnWidth>
-      <ValueColumnWidth column_width="264"></ValueColumnWidth>
+      <ValueColumnWidth column_width="259"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="22" />
    <wvobject fp_name="/tb/SW" type="array">
       <obj_property name="ElementShortName">SW[15:0]</obj_property>
       <obj_property name="ObjectShortName">SW[15:0]</obj_property>
@@ -79,16 +79,68 @@
       <obj_property name="ElementShortName">ram[0:1023][31:0]</obj_property>
       <obj_property name="ObjectShortName">ram[0:1023][31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/elem_bi" type="array">
-      <obj_property name="ElementShortName">elem_bi[15:0][31:0]</obj_property>
-      <obj_property name="ObjectShortName">elem_bi[15:0][31:0]</obj_property>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_0" type="array">
+      <obj_property name="ElementShortName">x_0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_0[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/max_elem_bo" type="array">
-      <obj_property name="ElementShortName">max_elem_bo[31:0]</obj_property>
-      <obj_property name="ObjectShortName">max_elem_bo[31:0]</obj_property>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_1" type="array">
+      <obj_property name="ElementShortName">x_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_1[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/max_index_bo" type="array">
-      <obj_property name="ElementShortName">max_index_bo[3:0]</obj_property>
-      <obj_property name="ObjectShortName">max_index_bo[3:0]</obj_property>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_2" type="array">
+      <obj_property name="ElementShortName">x_2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_3" type="array">
+      <obj_property name="ElementShortName">x_3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_3[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_4" type="array">
+      <obj_property name="ElementShortName">x_4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_4[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_5" type="array">
+      <obj_property name="ElementShortName">x_5[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_5[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_6" type="array">
+      <obj_property name="ElementShortName">x_6[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_6[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_7" type="array">
+      <obj_property name="ElementShortName">x_7[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_7[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_8" type="array">
+      <obj_property name="ElementShortName">x_8[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_8[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_9" type="array">
+      <obj_property name="ElementShortName">x_9[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_9[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_10" type="array">
+      <obj_property name="ElementShortName">x_10[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_10[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_11" type="array">
+      <obj_property name="ElementShortName">x_11[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_11[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_12" type="array">
+      <obj_property name="ElementShortName">x_12[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_12[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_13" type="array">
+      <obj_property name="ElementShortName">x_13[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_13[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_14" type="array">
+      <obj_property name="ElementShortName">x_14[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_14[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/x_15" type="array">
+      <obj_property name="ElementShortName">x_15[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x_15[31:0]</obj_property>
    </wvobject>
 </wave_config>

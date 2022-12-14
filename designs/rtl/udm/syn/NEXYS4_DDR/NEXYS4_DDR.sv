@@ -140,11 +140,42 @@ logic [31:0] csr_elem_in [15:0];
 logic [31:0] csr_max_elem_out;
 logic [3:0] csr_max_index_out;
 // module instantiation
-FindMaxVal_comb FindMaxVal_inst (
- .elem_bi(csr_elem_in)
- , .max_elem_bo(csr_max_elem_out)
- , .max_index_bo(csr_max_index_out)
+// HLS module instantiation
+logic hls_module_done;
+FindMaxVal FindMaxVal_inst (
+ .ap_clk(clk_gen)
+ , .ap_rst(srst)
+ , .ap_start(1'b1)
+ , .ap_done(hls_module_done)
+ //, .ap_idle()
+ //, .ap_ready()
+ , .agg_result_max_elem(csr_max_elem_out)
+ //, .agg_result_max_elem_ap_vld()
+ , .agg_result_max_index(csr_max_index_out)
+ //, .agg_result_max_index_ap_vld()
+ , .x_0(csr_elem_in[0])
+ , .x_1(csr_elem_in[1])
+ , .x_2(csr_elem_in[2])
+ , .x_3(csr_elem_in[3])
+ , .x_4(csr_elem_in[4])
+ , .x_5(csr_elem_in[5])
+ , .x_6(csr_elem_in[6])
+ , .x_7(csr_elem_in[7])
+ , .x_8(csr_elem_in[8])
+ , .x_9(csr_elem_in[9])
+ , .x_10(csr_elem_in[10])
+ , .x_11(csr_elem_in[11])
+ , .x_12(csr_elem_in[12])
+ , .x_13(csr_elem_in[13])
+ , .x_14(csr_elem_in[14])
+ , .x_15(csr_elem_in[15])
 );
+
+//FindMaxVal_comb FindMaxVal_inst (
+// .elem_bi(csr_elem_in)
+// , .max_elem_bo(csr_max_elem_out)
+// , .max_index_bo(csr_max_index_out)
+//);
 
 
 // bus request
