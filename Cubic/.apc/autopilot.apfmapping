@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Cubic.c" path="C:\Users\Pitao\Desktop\HLS\Cubic\srcs\Cubic.c"/>
+  </source>
+  <testbench>
+    <originFiles name="main.c" path="C:\Users\Pitao\Desktop\HLS\Cubic\srcs\main.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
