@@ -30,7 +30,7 @@ sigma
 	.CPU("riscv_1stage")
 	, .delay_test_flag(0)
 	, .mem_init_type("hex")
-	, .mem_init_data("../sigma/sw/apps/cubic.riscv.hex")
+	, .mem_init_data("Z:/Computer Systems Design/activecore/designs/rtl/sigma/sw/apps/cubic.riscv")
 	, .mem_size(8192)
 ) sigma
 (
