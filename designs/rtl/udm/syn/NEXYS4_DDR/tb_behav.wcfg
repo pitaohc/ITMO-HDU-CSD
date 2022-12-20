@@ -12,14 +12,18 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="7644693878fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomEndTime time="5976678032fs"></ZoomEndTime>
+      <Cursor1Time time="2876986000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="437"></NameColumnWidth>
-      <ValueColumnWidth column_width="264"></ValueColumnWidth>
+      <ValueColumnWidth column_width="259"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="8" />
+   <wave_markers>
+      <marker time="1555000000" label="" />
+      <marker time="2065000000" label="" />
+   </wave_markers>
    <wvobject fp_name="/tb/SW" type="array">
       <obj_property name="ElementShortName">SW[15:0]</obj_property>
       <obj_property name="ObjectShortName">SW[15:0]</obj_property>
@@ -79,16 +83,12 @@
       <obj_property name="ElementShortName">ram[0:1023][31:0]</obj_property>
       <obj_property name="ObjectShortName">ram[0:1023][31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/elem_bi" type="array">
-      <obj_property name="ElementShortName">elem_bi[15:0][31:0]</obj_property>
-      <obj_property name="ObjectShortName">elem_bi[15:0][31:0]</obj_property>
+   <wvobject fp_name="/tb/DUT/Cubic_inst/input_number" type="array">
+      <obj_property name="ElementShortName">input_number[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_number[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/max_elem_bo" type="array">
-      <obj_property name="ElementShortName">max_elem_bo[31:0]</obj_property>
-      <obj_property name="ObjectShortName">max_elem_bo[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/DUT/FindMaxVal_inst/max_index_bo" type="array">
-      <obj_property name="ElementShortName">max_index_bo[3:0]</obj_property>
-      <obj_property name="ObjectShortName">max_index_bo[3:0]</obj_property>
+   <wvobject fp_name="/tb/DUT/Cubic_inst/output_number" type="array">
+      <obj_property name="ElementShortName">output_number[31:0]</obj_property>
+      <obj_property name="ObjectShortName">output_number[31:0]</obj_property>
    </wvobject>
 </wave_config>
