@@ -11,19 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1021800000fs"></ZoomStartTime>
-      <ZoomEndTime time="1312600001fs"></ZoomEndTime>
-      <Cursor1Time time="1161800000fs"></Cursor1Time>
+      <ZoomStartTime time="1335636450fs"></ZoomStartTime>
+      <ZoomEndTime time="2013136451fs"></ZoomEndTime>
+      <Cursor1Time time="1259050000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="251"></NameColumnWidth>
-      <ValueColumnWidth column_width="410"></ValueColumnWidth>
+      <ValueColumnWidth column_width="405"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="10" />
    <wave_markers>
       <marker time="1045000000" label="" />
       <marker time="1115000000" label="" />
-      <marker time="1090000000" label="" />
    </wave_markers>
    <wvobject fp_name="/tb/SW" type="array">
       <obj_property name="ElementShortName">SW[15:0]</obj_property>
